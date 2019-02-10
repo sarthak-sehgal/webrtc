@@ -23,8 +23,22 @@ body, html {
     width: 50vw;
 }
 
+#vidContainer {
+    display: flex;
+}
+
 video {
     height: 100%;
     width: 100%;
     transform: rotateY(180deg);
+}
+
+#controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100vw;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

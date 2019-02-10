@@ -11,4 +11,4 @@ app.get('/', (req, res) => {
 
 app.use('/static', express.static(path.join(__dirname, 'static')))
 
-app.listen(3000);
+app.listen(4000, () => console.log("Server started on port 4000"));
