@@ -6,11 +6,6 @@ let isStarted = false;
 let localStream;
 let remoteStream;
 let pc; // peer connection
-const pcConfig = {
-    'iceServers': [{
-        'urls': 'stun:stun.l.google.com:19302'
-    }]
-};
 const sdpConstraints = {
     offerToReceiveAudio: true,
     offerToReceiveVideo: true
