@@ -20,7 +20,7 @@ const pcConfig = {
     ]
 }
 const socket = io.connect();
-let room = window.prompt("Enter room name");
+const room = "room";
 
 if(room.trim() !== "") {
     socket.emit('create or join', room);
