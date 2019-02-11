@@ -10,6 +10,15 @@ const sdpConstraints = {
     offerToReceiveAudio: true,
     offerToReceiveVideo: true
 };
+const pcConfig = {
+    "iceServers": [
+        {url: "stun:stun.l.google.com:19302"},
+        {url: "stun:stun.1.l.google.com:19302"},
+        {url: "stun:stun.2.l.google.com:19302"},
+        {url: "stun:stun.3.l.google.com:19302"},
+        {url: "stun:stun.4.l.google.com:19302"},
+    ]
+}
 const socket = io.connect();
 const room = "room";
 
@@ -112,7 +121,7 @@ window.onbeforeunload = function () {
 function createPeerConnection() {
     console.log("Creating peer connection...");
     try {
-        pc = new RTCPeerConnection(null);
+        pc = new RTCPeerConnection(pcConfig);
         pc.onicecandidate = handleIceCandidate;
         pc.onaddstream = handleRemoteStreamAdded;
         pc.onremovestream = handleRemoteStreamRemoved;
