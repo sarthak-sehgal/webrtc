@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const server = app.listen(4000, () => console.log("Server started on port 4000"));
+const server = app.listen(process.env.PORT || 4000, () => console.log("Server started on port 4000"));
 const path = require('path');
 const io = require('socket.io')(server);
 
